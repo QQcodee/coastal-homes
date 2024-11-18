@@ -3,13 +3,9 @@ import {
   AirVent,
   BadgeCheck,
   Flame,
-  House,
   LayoutPanelTop,
-  Play,
   PlayCircle,
-  ThermometerSnowflakeIcon,
   ThermometerSun,
-  Wind,
   WindIcon,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
@@ -29,7 +25,7 @@ import { CarouselFeatures } from "@/components/features";
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrolled2, setIsScrolled2] = useState(false);
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +42,9 @@ const Home = () => {
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsScrolled2(true);
-          observer.unobserve(ref.current);
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
         }
       },
       { threshold: 0.1 }
@@ -305,9 +303,7 @@ const Home = () => {
                 <iframe
                   src="https://www.youtube.com/embed/ur1-mW-Itf4?si=lZ8MjitieNgtMRiV"
                   title="YouTube video player"
-                  frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                  referrerpolicy="strict-origin-when-cross-origin"
                 ></iframe>
               </PopoverContent>
             </Popover>

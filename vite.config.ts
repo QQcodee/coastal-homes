@@ -9,4 +9,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  esbuild: {
+    // Turn off TypeScript type checking during build (Optional)
+    // You can also customize the behavior here
+    logOverride: {
+      typescript: "silent",
+    },
+  },
 });

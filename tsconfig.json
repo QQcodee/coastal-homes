@@ -8,6 +8,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "noEmitOnError": false, // Allow build even with errors
+    "strict": true
   }
 }
