@@ -19,7 +19,7 @@ import {
 
 export function CarouselFeatures() {
   return (
-    <Carousel opts={{ loop: true }} className="w-full max-w-sm sm:max-w-7xl ">
+    <Carousel opts={{ loop: true }} className="w-full max-w-7xl">
       <CarouselContent className="-ml-1">
         <CarouselItem className="pl-1 md:basis-1/2 lg:basis-1/3">
           <div className="p-1">
@@ -173,8 +173,8 @@ export function CarouselFeatures() {
           </div>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious className="hidden md:block" />
-      <CarouselNext className="hidden md:block" />
+      <CarouselPrevious className="hidden 2xl:block" />
+      <CarouselNext className="hidden 2xl:block" />
     </Carousel>
   );
 }
