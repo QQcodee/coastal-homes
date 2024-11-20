@@ -31,16 +31,21 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { CarouselFeatures } from "@/components/features";
+import { GalleryCarousel } from "@/components/gallery";
 
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrolled2, setIsScrolled2] = useState(false);
+  const [animatePs, setAnimatePs] = useState(false);
+
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       // Check if the page is scrolled more than 50 pixels (adjust as needed)
       setIsScrolled(window.scrollY > 50);
+
+      window.scrollY > 1600 ? setAnimatePs(true) : "";
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -52,6 +57,7 @@ const Home = () => {
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsScrolled2(true);
+
           if (ref.current) {
             observer.unobserve(ref.current);
           }
@@ -115,6 +121,11 @@ const Home = () => {
                   </SheetClose>
                   <SheetClose asChild>
                     <p className="text-black font-bold cursor-pointer hover:text-gray-400 ">
+                      About Us
+                    </p>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <p className="text-black font-bold cursor-pointer hover:text-gray-400 ">
                       Contact Us
                     </p>
                   </SheetClose>
@@ -140,6 +151,9 @@ const Home = () => {
           </p>
           <p className="text-white font-bold cursor-pointer hover:text-gray-400 ">
             Floorplans
+          </p>
+          <p className="text-white font-bold cursor-pointer hover:text-gray-400 ">
+            About Us
           </p>
           <p className="text-white font-bold cursor-pointer hover:text-gray-400 ">
             Contact Us
@@ -201,11 +215,11 @@ const Home = () => {
       </div>
 
       <div className="w-full flex items-center justify-center">
-        <div className="hidden 2xl:flex 2xl:flex-col animate-slideInRight  z-[10] h-[max-content] w-[700px] max-w-[700px] absolute top-[300px] left-[1000px]  rounded-[20px] bg-white/65 backdrop-blur-md border border-white/20 shadow-2xl py-[20px] px-[20px] gap-2 font-poppins">
+        <div className="hidden 2xl:flex 2xl:flex-col animate-slideInRight  z-[10] h-[max-content] w-[700px] max-w-[700px] absolute top-[300px] left-[1000px]  rounded-[20px] bg-white/85 backdrop-blur-md border border-white/20 shadow-2xl py-[20px] px-[20px] gap-2 font-poppins">
           <p className="text-center text-[21px] font-bold">
             Building Method Comparison
           </p>
-          <hr className="w-full h-[1px] bg-gray-400" />
+
           <table className="w-full border-separate border-spacing-y-3 border-spacing-x-2 ">
             <thead>
               <tr>
@@ -381,12 +395,13 @@ const Home = () => {
       </div>
 
       <div className="bg-white flex justify-center items-center p-10 w-full 2xl:hidden">
-        <div className="w-1/2 flex items-center justify-center">
-          <div className="flex flex-col animate-slideInRight  z-[10] h-[max-content] w-[700px] max-w-[700px]  rounded-[20px]  shadow-2xl py-[20px] px-[20px] gap-2 font-poppins">
+        <div className="w-full flex items-center justify-center">
+          <div className="flex flex-col animate-slideInRight  z-[10] h-[max-content] w-[700px] max-w-[700px]  rounded-[20px]   py-[20px] px-2 gap-2 font-poppins">
             <p className="text-center text-[21px] font-bold">
               Building Method Comparison
             </p>
             <hr className="w-full h-[1px] bg-gray-400" />
+
             <table className="w-full border-separate border-spacing-y-3 border-spacing-x-2 ">
               <thead>
                 <tr>
@@ -515,7 +530,7 @@ const Home = () => {
                 </tr>
               </tbody>
             </table>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-[max-content] mx-auto">
               View Detailed Comparison Report
             </button>
           </div>
@@ -540,8 +555,14 @@ const Home = () => {
         </h2>
 
         <div className="flex flex-col xl:flex-row gap-5 w-full justify-center">
-          <div className="2xl:w-1/6 h-full flex flex-col justify-center gap-10 ">
-            <p className="text-[22px] font-semibold text-white flex flex-col gap-5 border-2 border-white p-3 rounded-[8px] hover:bg-blue-500">
+          <div
+            className={`2xl:w-1/6 h-full flex flex-col justify-center gap-10 ${
+              animatePs ? "animate-slideInLeft" : ""
+            }`}
+          >
+            <p
+              className={`text-[22px] font-semibold text-white flex flex-col gap-5 border-2 border-white p-3 rounded-[8px] hover:bg-blue-500 `}
+            >
               <WindIcon className="w-[50px] h-[50px] text-white" />
               Wind Resistant up to 180 MPH
             </p>
@@ -580,7 +601,11 @@ const Home = () => {
               Category 5 Hurricane Ian
             </span>
           </div>
-          <div className="2xl:w-1/6  h-full flex flex-col justify-center gap-5 ">
+          <div
+            className={`2xl:w-1/6 h-full flex flex-col justify-center gap-5 ${
+              animatePs ? "animate-slideInRight" : ""
+            }`}
+          >
             <p className="text-[22px] font-semibold text-white flex flex-col gap-5 border-2 border-white p-3 rounded-[8px] hover:bg-blue-500">
               <ThermometerSun className="w-[50px] h-[50px] text-white" />
               Even temperatures year-round
@@ -599,12 +624,25 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <span className="text-[19px] font-light text-white 2xl:hidden">
+        <span className="text-[19px] font-light text-white hidden">
           Category 5 Hurricane Ian
         </span>
       </div>
+
+      <div className="h-[max-content] w-full bg-white px-10 py-[80px] flex flex-col gap-5 items-center">
+        <h2 className="text-[46px] font-bold text-black">
+          Featured Floor Plans{" "}
+        </h2>
+      </div>
+      <div className="h-[max-content] w-full bg-white px-10 py-[80px] flex flex-col gap-5 items-center">
+        <h2 className="text-[46px] font-bold text-black">About Us</h2>
+      </div>
       <div className="h-[1000px] w-full bg-white px-10 py-[80px] flex flex-col gap-5 items-center">
         <h2 className="text-[46px] font-bold text-black">Gallery </h2>
+        <GalleryCarousel />
+        <p className="bg-blueB px-3 py-2 rounded-[8px] text-white cursor-pointer hover:bg-blue-500 hover:text-white">
+          <span className="!text-white">View more</span>{" "}
+        </p>
       </div>
     </div>
   );
