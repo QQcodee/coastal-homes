@@ -14,7 +14,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
-import Logo from "../assets/LogoWithe.png";
+import Logo from "../assets/Logo Coastal homes.png";
 import LogoBlack from "../assets/ModularHomes.png";
 
 import {
@@ -32,6 +32,7 @@ import {
 } from "@/components/ui/popover";
 import { CarouselFeatures } from "@/components/features";
 import { GalleryCarousel } from "@/components/gallery";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -180,7 +181,7 @@ const Home = () => {
       <div className=" h-[850px] w-screen mt-[-850px] py-[200px] px-[20px] sm:px-[50px] 2xl:px-[200px] z-10 flex flex-col bg-blue-500 bg-opacity-15 shadow-2xl">
         <div className="flex items-center gap-2 ">
           <div className="h-[32px] bg-white w-[10px]"></div>
-          <p className="text-[19px] lg:text-[36px] font-regular text-white overflow-hidden sm:whitespace-nowrap animate-typewriter">
+          <p className="text-[19px] lg:text-[36px] font-regular text-white overflow-hidden sm:whitespace-nowrap md:animate-typewriter">
             The Best Hurricane-Proof Modular Construction Solution
           </p>
         </div>
@@ -597,7 +598,7 @@ const Home = () => {
                 />
               }
             />
-            <span className="text-[19px] font-light text-white text-center">
+            <span className="text-[19px] font-light text-white text-center mt-5">
               Category 5 Hurricane Ian
             </span>
           </div>
@@ -629,14 +630,34 @@ const Home = () => {
         </span>
       </div>
 
+      <div className="h-[max-content] w-full bg-white px-10 py-[80px] flex flex-col  justify-center items-center gap-10">
+        <h2 className="text-[46px] font-bold text-black">About Us</h2>
+        <div className="flex gap-5 items-center">
+          <img
+            src="https://i0.wp.com/bluewaterbuildersstpete.com/wp-content/uploads/2023/09/bluewaterbuilders-owners.png?w=620&ssl=1"
+            className="w-[300px] h-[300px] object-cover rounded-[20px] border-2 border-blueB shadow-lg"
+            alt=""
+          />
+          <p className="max-w-[500px] text-md ">
+            Modular Coastal Homes is your trusted partner in creating
+            exceptional coastal living spaces. As a certified and authorized
+            Affinity Builder, we specialize in designing and constructing custom
+            modular coastal homes, home expansions, site preparation, and more.
+            Whether you're dreaming of a modern beachside retreat or a
+            sustainable coastal haven, we bring your vision to life with
+            precision and care. Our commitment to quality craftsmanship and
+            customer satisfaction ensures a smooth and enjoyable experience.
+            Welcome to the future of coastal living, welcome to Modular Coastal
+            Homes.
+          </p>
+        </div>
+      </div>
       <div className="h-[max-content] w-full bg-white px-10 py-[80px] flex flex-col gap-5 items-center">
         <h2 className="text-[46px] font-bold text-black">
           Featured Floor Plans{" "}
         </h2>
       </div>
-      <div className="h-[max-content] w-full bg-white px-10 py-[80px] flex flex-col gap-5 items-center">
-        <h2 className="text-[46px] font-bold text-black">About Us</h2>
-      </div>
+
       <div className="h-[1000px] w-full bg-white px-10 py-[80px] flex flex-col gap-5 items-center">
         <h2 className="text-[46px] font-bold text-black">Gallery </h2>
         <GalleryCarousel />
@@ -644,6 +665,7 @@ const Home = () => {
           <span className="!text-white">View more</span>{" "}
         </p>
       </div>
+      <Footer />
     </div>
   );
 };
