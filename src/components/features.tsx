@@ -173,8 +173,8 @@ export function CarouselFeatures() {
           </div>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious className="hidden 2xl:block" />
-      <CarouselNext className="hidden 2xl:block" />
+      <CarouselPrevious />
+      <CarouselNext />
     </Carousel>
   );
 }
