@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-blueB">
       <div className="flex flex-col md:flex-row items-center justify-center h-[max-content] ">
-        <div className="w-1/4 bg-blueB h-full flex flex-col justify-center items-start p-10">
+        <div className="w-full sm:w-1/4 bg-blueB h-full flex flex-col justify-center items-start p-10">
           <img src={Logo} alt="" className="w-[150px] h-[150px]" />
           <h2 className="text-white text-2xl">Modular Coastal Homes</h2>
           <nav className=" mt-10 font-medium text-lg">
@@ -15,7 +15,7 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
-        <div className="w-2/4 bg-blueB h-full">
+        <div className="w-full sm:w-2/4 bg-blueB h-full">
           <iframe
             loading="lazy"
             src="https://maps.google.com/maps?q=12385%2074th%20ave&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
@@ -24,7 +24,7 @@ const Footer = () => {
             className="w-full h-[250px]"
           ></iframe>
         </div>
-        <div className="w-1/4 bg-blueB h-full">
+        <div className="w-full sm:w-1/4 bg-blueB h-full mb-10">
           <p className="text-white p-10 text-center">
             <span className="text-2xl font-bold">Blue Water Builders</span>
             <br />

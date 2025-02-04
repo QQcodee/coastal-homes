@@ -632,13 +632,13 @@ const Home = () => {
 
       <div className="h-[max-content] w-full bg-white px-10 py-[80px] flex flex-col  justify-center items-center gap-10">
         <h2 className="text-[46px] font-bold text-black">About Us</h2>
-        <div className="flex gap-5 items-center">
+        <div className="flex flex-col sm:flex-row gap-5 items-center">
           <img
             src="https://i0.wp.com/bluewaterbuildersstpete.com/wp-content/uploads/2023/09/bluewaterbuilders-owners.png?w=620&ssl=1"
             className="w-[300px] h-[300px] object-cover rounded-[20px] border-2 border-blueB shadow-lg"
             alt=""
           />
-          <p className="max-w-[500px] text-md ">
+          <p className="max-w-[500px] text-md text-center ">
             Modular Coastal Homes is your trusted partner in creating
             exceptional coastal living spaces. As a certified and authorized
             Affinity Builder, we specialize in designing and constructing custom
