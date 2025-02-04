@@ -26,14 +26,14 @@ const Footer = () => {
         </div>
         <div className="w-full sm:w-1/4 bg-blueB h-full mb-10">
           <p className="text-white p-10 text-center">
-            <span className="text-2xl font-bold">Blue Water Builders</span>
+            <span className="text-2xl font-bold">Modular Coastal Homes</span>
             <br />
             <span className="underline"> General Contractor</span>
             <br /> <br />
             Office: (727) 580-55-50
             <br /> <br /> 12385 74th ave Seminole, FL. 33772 <br /> <br />
             Hours Mon-Fri 8:00a-5:00p <br /> <br />
-            office@bluewaterbuildersstpete.com <br /> <br />
+            office@modularcoastalhomes.com <br /> <br />
             Licence: CGC-1505066 CPC-1457007
           </p>
         </div>
